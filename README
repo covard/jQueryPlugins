@@ -1,0 +1,18 @@
+Character Counter v1.0
+Appends a span with the count of characters in each textarea on the page
+example
+$(function() {
+	$('textarea').CharacterCounter();
+});
+
+Textarea Expander v1.0
+If a textarea has x lines or x characters the height of the textarea will change.
+The maxHeight will be set on focus and the minHeight will be set on blur.
+$(function() {
+	$('textarea').TextareaExpander({
+		lines: 6,
+		chars: 400,
+		maxHeight: '400px',
+		minHeight: '50px'
+	});
+});
