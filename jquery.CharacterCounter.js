@@ -14,7 +14,9 @@
 			$input.keyup(GetCount);
 			
 			function GetCount() {
-				$input.next().html($input.val().length);
+				var string = $input.val().replace(new RegExp("\\n", "g"), "");
+				$input.next().html(string.length);
+				$input.TextareaExpander();
 			}
 		});
 	};

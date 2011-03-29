@@ -19,7 +19,7 @@
 			var $input = $(this);
 			if ($input[0].type.toLowerCase() != "textarea") return;
 			
-			$input.focus(Expand).blur(Shrink);
+			$input.focus(Expand).blur(Shrink).keyup(Count);
 			
 			function Expand() {
 				var lLength = $input.val().split("\n").length;
@@ -32,6 +32,11 @@
 			
 			function Shrink() {
 				$input.css('height', options.minHeight);
+			}
+			
+			function Count() {
+				var string = $input.val().replace(new RegExp("\\n", "g"), "");
+				Expand();
 			}
 		});
 	};
